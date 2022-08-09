@@ -42,6 +42,7 @@ class FaceDetail(ListView):
         faces_with_matching_district_added = [self.with_matching_district(face, alphabet) for face in faces]
         faces_ordered_by_matching_district = sorted(faces_with_matching_district_added,
                                                     key=lambda f: f.matching_district)
+        die("Hello World")
         return faces_ordered_by_matching_district
 
     def get_context_data(self):
@@ -56,6 +57,7 @@ class FaceDetail(ListView):
             except StopIteration:
                 pass
         context["current_page"] = 'face-district'
+        die("Hello World 1")
         return context
 
     @staticmethod
@@ -66,4 +68,5 @@ class FaceDetail(ListView):
 
         face_image_location = face.image.locations.filter(district__istartswith=alphabet).first()
         face.matching_district = face_image_location and face_image_location.district or ''
+        die("Hello World 2")
         return face

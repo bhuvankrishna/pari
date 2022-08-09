@@ -16,6 +16,7 @@ from core.utils import get_translations_for_page, filter_by_language
 
 from album.models import Album
 from face.models import Face
+from painting.models import painting
 from resources.models import Resource
 from core.mixins import Page1Redirector
 

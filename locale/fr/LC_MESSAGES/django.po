@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 12:31+0530\n"
+"POT-Creation-Date: 2022-05-05 13:48+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,8 +66,8 @@ msgid "Album"
 msgstr ""
 
 #: album/templates/album/album_detail.html:190
-#: article/templates/article/article.html:230
-#: article/templates/article/includes/author_info.html:43
+#: article/templates/article/article.html:232
+#: article/templates/article/includes/author_info.html:49
 msgid "Share"
 msgstr ""
 
@@ -127,30 +127,30 @@ msgstr ""
 msgid "Languages"
 msgstr ""
 
-#: article/templates/article/article.html:197
+#: article/templates/article/article.html:199
 #: search/templates/wagtailadmin/pages/listing/_table_headers_explore.html:52
 msgid "Language"
 msgstr ""
 
-#: article/templates/article/article.html:227
+#: article/templates/article/article.html:229
 msgid "Read the story in pictures"
 msgstr ""
 
-#: article/templates/article/article.html:239
+#: article/templates/article/article.html:241
 msgid "Print this story"
 msgstr ""
 
-#: article/templates/article/article.html:252
+#: article/templates/article/article.html:254
 msgid "See more from this region"
 msgstr ""
 
-#: article/templates/article/article.html:303
+#: article/templates/article/article.html:304
 msgid "RELATED STORIES"
 msgstr ""
 
 #: article/templates/article/includes/article_list.html:32
-#: core/templates/core/home_page.html:301
-#: core/templates/core/home_page.html:348
+#: core/templates/core/home_page.html:292
+#: core/templates/core/home_page.html:339
 msgid "languages"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr ""
 msgid "translate."
 msgstr ""
 
-#: article/templates/article/includes/author_info.html:65
+#: article/templates/article/includes/author_info.html:71
 msgid " Other stories by "
 msgstr ""
 
@@ -199,6 +199,10 @@ msgstr ""
 
 #: author/wagtail_hooks.py:21 search/templates/includes/search_filters.html:96
 msgid "Authors"
+msgstr ""
+
+#: author/wagtail_hooks.py:28
+msgid "Roles"
 msgstr ""
 
 #: category/templates/category/category_detail.html:5
@@ -270,7 +274,7 @@ msgid "View this Talking Album"
 msgstr ""
 
 #: category/templates/category/gallery_home_page.html:89
-#: core/templates/core/home_page.html:515
+#: core/templates/core/home_page.html:538
 msgid "View all Talking Albums"
 msgstr ""
 
@@ -283,7 +287,7 @@ msgid "View this video"
 msgstr ""
 
 #: category/templates/category/gallery_home_page.html:93
-#: core/templates/core/home_page.html:541
+#: core/templates/core/home_page.html:564
 #: core/templates/pages/menus/dropdown.html:112
 msgid "View all videos"
 msgstr ""
@@ -293,7 +297,7 @@ msgid "View this Photo Album"
 msgstr ""
 
 #: category/templates/category/gallery_home_page.html:97
-#: core/templates/core/home_page.html:568
+#: core/templates/core/home_page.html:591
 msgid "View all Photo Albums"
 msgstr ""
 
@@ -311,23 +315,23 @@ msgid ""
 "Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
 msgstr ""
 
-#: core/models.py:110 core/models.py:116
+#: core/models.py:112 core/models.py:118
 msgid "Please add a page"
 msgstr ""
 
-#: core/models.py:220
+#: core/models.py:234
 msgid "HomePage"
 msgstr ""
 
-#: core/models.py:308
+#: core/models.py:320
 msgid "GuidelinesPage"
 msgstr ""
 
-#: core/models.py:321
+#: core/models.py:333
 msgid "Please add photographers to the image"
 msgstr ""
 
-#: core/models.py:380
+#: core/models.py:392
 msgid "GalleryHomePage"
 msgstr ""
 
@@ -337,11 +341,11 @@ msgstr ""
 msgid "CATEGORIES"
 msgstr ""
 
-#: core/templates/base.html:115
+#: core/templates/base.html:115 pari/settings/local.py:103
 msgid "People's Archive of Rural India"
 msgstr ""
 
-#: core/templates/core/about.html:4 core/templates/core/home_page.html:397
+#: core/templates/core/about.html:4 core/templates/core/home_page.html:396
 #: core/templates/pages/menus/dropdown.html:195
 #: core/templates/pages/menus/footer.html:55
 msgid "The story of PARI"
@@ -692,7 +696,7 @@ msgid ""
 msgstr ""
 
 #: core/templates/core/about.html:298 core/templates/core/about.html:308
-#: core/templates/core/home_page.html:479
+#: core/templates/core/home_page.html:502
 msgid "Learn more"
 msgstr ""
 
@@ -1269,7 +1273,6 @@ msgid "Mausumi Bhattacharyya"
 msgstr ""
 
 #: core/templates/core/acknowledgements.html:224
-#: core/templates/core/founders.html:27 core/templates/core/founders.html:55
 msgid "Namita Waikar"
 msgstr ""
 
@@ -1302,7 +1305,6 @@ msgid "Shalini Singh"
 msgstr ""
 
 #: core/templates/core/acknowledgements.html:238
-#: core/templates/core/founders.html:30 core/templates/core/founders.html:60
 msgid "Sharmila Joshi"
 msgstr ""
 
@@ -1311,7 +1313,6 @@ msgid "Shreya Katyayini"
 msgstr ""
 
 #: core/templates/core/acknowledgements.html:240
-#: core/templates/core/founders.html:33 core/templates/core/founders.html:65
 msgid "Siddharth Adelkar"
 msgstr ""
 
@@ -1372,8 +1373,7 @@ msgid ""
 msgstr ""
 
 #: core/templates/core/acknowledgements.html:269
-#: core/templates/core/donate.html:150 core/templates/core/founders.html:19
-#: core/templates/core/founders.html:44
+#: core/templates/core/donate.html:150
 #: core/templates/pages/menus/dropdown.html:267
 msgid "P. Sainath"
 msgstr ""
@@ -1662,10 +1662,10 @@ msgid ""
 msgstr ""
 
 #: core/templates/core/contribute.html:148 core/templates/core/donate.html:4
-#: core/templates/core/donate.html:129 core/templates/core/home_page.html:582
+#: core/templates/core/donate.html:129 core/templates/core/home_page.html:605
 #: core/templates/pages/menus/dropdown.html:285
 #: core/templates/pages/menus/footer.html:85
-#: donation/templates/donation/donate_form.html:17
+#: donation/templates/donation/donate_form.html:18
 msgid "Donate to PARI"
 msgstr ""
 
@@ -1674,6 +1674,13 @@ msgid ""
 "We can do this without governments – and will. We can’t do it without you. A "
 "tax-exempt financial contribution will help PARI pull off this most "
 "ambitious of Indian journalistic endeavours."
+msgstr ""
+
+#: core/templates/core/donate.html:20
+#, python-format
+msgid ""
+"In 2014-15, only about <span class=\"highlight\">0.24%%</span> of front page "
+"news came out of rural India.<br/>We want to change that."
 msgstr ""
 
 #: core/templates/core/donate.html:23
@@ -1810,7 +1817,7 @@ msgstr ""
 msgid ""
 "You can send in donations using a range of payment methods. All donations "
 "made to the CounterMedia Trust are <a href=\"/media/uploads/"
-"Donate/80g_certificate.jpg\" target=\"_blank\">eligible for exemption</a> "
+"Donate/80_certificate_2.pdf\" target=\"_blank\">eligible for exemption</a> "
 "under Section 80G of the Income Tax Act, 1961."
 msgstr ""
 
@@ -1853,153 +1860,15 @@ msgstr ""
 msgid "Sincerely"
 msgstr ""
 
-#: core/templates/core/founders.html:3
+#: core/templates/core/founders.html:4
 msgid ""
 "P. Sainath is the Founder Editor of the People’s Archive of Rural India. The "
 "archive is an outcome of his three decades-plus in journalism – including a "
 "quarter century of reporting from rural India."
 msgstr ""
 
-#: core/templates/core/founders.html:4
+#: core/templates/core/founders.html:5
 msgid "Founder Editor P Sainath"
-msgstr ""
-
-#: core/templates/core/founders.html:17
-msgid "Founder's page"
-msgstr ""
-
-#: core/templates/core/founders.html:20
-msgid ""
-"P. Sainath is the Founder Editor of the People’s Archive of Rural India. The "
-"archive is an outcome of his three decades-plus in journalism – including a "
-"quarter century of reporting from rural India. PARI aims to address the "
-"complete failure of the corporate media to cover two-thirds of the country’s "
-"population. Our aim is to report and record what is easily the most complex "
-"part of the planet."
-msgstr ""
-
-#: core/templates/core/founders.html:21
-msgid ""
-"Sainath, former Rural Affairs Editor of The Hindu, writer and journalism "
-"teacher, is the 2007 winner of the Ramon Magsaysay Award, Asia’s most "
-"prestigious prize. He has also won the World Media Summit Global Award for "
-"Excellence 2014, in Public Welfare reporting. He was the first reporter in "
-"the world to win Amnesty International’s Global Award for Human Rights "
-"Journalism in its inaugural year in 2000. Sainath has taught at journalism "
-"schools in India and abroad, mentoring students as well as training media "
-"professionals."
-msgstr ""
-
-#: core/templates/core/founders.html:22
-msgid ""
-"His book <i>Everybody Loves a Good Drought </i>(Penguin India, 1996), now in "
-"its 43rd print, was declared a Penguin Classic in January 2013.  The book is "
-"being used in over a hundred universities in India and abroad. His photo "
-"archive of black and white images from rural India is being digitised. One "
-"part of that titled &#39;Visible Work, Invisible Women&#39; is now on PARI "
-"as a fully curated online exhibition. For more on Sainath see <a href="
-"\"http://www.psainath.org/\" target=\"_blank\">www.psainath.org.</a>"
-msgstr ""
-
-#: core/templates/core/founders.html:24 core/templates/core/founders.html:50
-msgid "Binaifer Bharucha"
-msgstr ""
-
-#: core/templates/core/founders.html:25
-msgid ""
-"Binaifer Bharucha is PARI’s Photo Editor and a freelance photographer based "
-"in Mumbai. Her commercial portfolio focuses on still life work (products, "
-"food, interiors and jewellery). Since 2010 she has been a part of ArtOxygen, "
-"an organisation that promotes people’s art in public spaces in Mumbai. She "
-"photographs and shoots videos of the interactions and encounters between the "
-"public, the artwork and the artist."
-msgstr ""
-
-#: core/templates/core/founders.html:26
-msgid ""
-"Binaifer has a postgraduate diploma in Social Communications Media from the "
-"Sophia Polytechnic, Mumbai. She loves, in no particular order, to shoot "
-"things that don’t move, going to the mountains, animals, books, films and "
-"food."
-msgstr ""
-
-#: core/templates/core/founders.html:28
-msgid ""
-"Namita Waikar is Managing Editor, PARI, and a CounterMedia trustee. She "
-"oversees the finance and administrative functions of the trust that runs "
-"PARI. Her work includes administering the PARI fellowships programme, "
-"managing communications with volunteers, overseeing all Indian language "
-"translations and reviews, and anchoring the landmark Grindmill Songs Project."
-msgstr ""
-
-#: core/templates/core/founders.html:29
-msgid ""
-"Namita is also a writer and translator (Marathi to English), and some of her "
-"stories, photos and videos are published on PARI.  In her day job, she is a "
-"partner in a chemistry databases firm in Pune, which is the culmination of "
-"her work of over 20 years as a biochemist and a software project manager."
-msgstr ""
-
-#: core/templates/core/founders.html:31
-msgid ""
-"Sharmila Joshi is the Executive Editor at PARI. Her work includes "
-"overseeing, editing and presenting PARI’s complex content from innumerable "
-"parts of the country. She also manages a pool of voluntary editors and "
-"trains editorial interns. She has a significant role in shaping our site’s "
-"editorial and ethical protocols."
-msgstr ""
-
-#: core/templates/core/founders.html:32
-msgid ""
-"As a journalist, Sharmila’s work has featured in several national and "
-"international publications. As a researcher, she has published in "
-"anthologies on gender and violence, on women in politics, and gender and "
-"labour. She has an MA in Historical Sociology from the State University of "
-"New York, and the work she started towards a PhD there remains a pipedream."
-msgstr ""
-
-#: core/templates/core/founders.html:34
-msgid ""
-"As Tech Editor, PARI, Siddharth Adelkar notices nifty tools and best "
-"practices in the tech world, and brings them home to PARI. "
-"Siddharth believes that journalists expect more than “just a website” from "
-"technologists. They need an engaged tech team that is sensitive to the "
-"geopolitical, economic and societal crisis that journalism is going through. "
-"Online journalism can be a redeeming force, but that requires building an "
-"enduring partnership between techies and journalists. One that strives to "
-"rebuild the Internet as a democratic and public space."
-msgstr ""
-
-#: core/templates/core/founders.html:35
-msgid ""
-"Siddharth works at ThoughtWorks, where he focuses on software for "
-"independent media. He is also the Secretary of the Free Software Movement of "
-"Maharashtra. He has a master’s degree in Computer Science from the "
-"University of Southern California."
-msgstr ""
-
-#: core/templates/core/founders.html:38
-msgid "People"
-msgstr ""
-
-#: core/templates/core/founders.html:43
-msgid "FOUNDER EDITOR"
-msgstr ""
-
-#: core/templates/core/founders.html:49
-msgid "PHOTO EDITOR"
-msgstr ""
-
-#: core/templates/core/founders.html:54
-msgid "MANAGING EDITOR"
-msgstr ""
-
-#: core/templates/core/founders.html:59
-msgid "EXECUTIVE EDITOR"
-msgstr ""
-
-#: core/templates/core/founders.html:64
-msgid "TECH EDITOR"
 msgstr ""
 
 #: core/templates/core/guidelines.html:4
@@ -2023,59 +1892,59 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: core/templates/core/home_page.html:203
+#: core/templates/core/home_page.html:194
 msgid "Read/ Watch/ Listen"
 msgstr ""
 
-#: core/templates/core/home_page.html:256
+#: core/templates/core/home_page.html:247
 msgid "IN FOCUS"
 msgstr ""
 
-#: core/templates/core/home_page.html:370
+#: core/templates/core/home_page.html:361
 msgid "All that you can discover on PARI"
 msgstr ""
 
-#: core/templates/core/home_page.html:391
+#: core/templates/core/home_page.html:390
 msgid "PARI is an insane project"
 msgstr ""
 
-#: core/templates/core/home_page.html:395
+#: core/templates/core/home_page.html:394
 msgid "Rural India — a living journal, a breathing archive"
 msgstr ""
 
-#: core/templates/core/home_page.html:402
+#: core/templates/core/home_page.html:401
 msgid "Here's how you can contribute"
 msgstr ""
 
-#: core/templates/core/home_page.html:446
+#: core/templates/core/home_page.html:461
 msgid "and a wonderful one"
 msgstr ""
 
-#: core/templates/core/home_page.html:471
+#: core/templates/core/home_page.html:494
 msgid "Stories from all over in all languages"
 msgstr ""
 
-#: core/templates/core/home_page.html:473
+#: core/templates/core/home_page.html:496
 msgid "Browse all Categories"
 msgstr ""
 
-#: core/templates/core/home_page.html:477
+#: core/templates/core/home_page.html:500
 msgid "Translate for PARI"
 msgstr ""
 
-#: core/templates/core/home_page.html:478
+#: core/templates/core/home_page.html:501
 msgid "Translate PARI content into languages you know"
 msgstr ""
 
-#: core/templates/core/home_page.html:492
+#: core/templates/core/home_page.html:515
 msgid "And many more stories in audio and video"
 msgstr ""
 
-#: core/templates/core/home_page.html:581
+#: core/templates/core/home_page.html:604
 msgid "Like what PARI is doing?"
 msgstr ""
 
-#: core/templates/core/home_page.html:585
+#: core/templates/core/home_page.html:608
 msgid "Contribute to PARI"
 msgstr ""
 
@@ -2089,6 +1958,12 @@ msgstr ""
 msgid ""
 "PARI will serve as a living, breathing textbook of Indian rural affairs for "
 "future generations of students and teachers. Find out how."
+msgstr ""
+
+#: core/templates/core/pari_teachers_students.html:25
+msgid ""
+"Visit PARI Education – join us in learning, researching, teaching and "
+"documenting the everyday lives of everyday people"
 msgstr ""
 
 #: core/templates/core/pari_teachers_students.html:43
@@ -2460,52 +2335,68 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: core/views.py:145
+#: core/views.py:164
 msgid "Your query has successfully been sent"
 msgstr ""
 
-#: donation/forms.py:10
+#: donation/forms.py:12
 msgid "NAME"
 msgstr ""
 
-#: donation/forms.py:15
+#: donation/forms.py:17
 msgid "EMAIL"
 msgstr ""
 
-#: donation/forms.py:19
+#: donation/forms.py:21
 msgid "PHONE NUMBER"
 msgstr ""
 
-#: donation/forms.py:23
+#: donation/forms.py:25
 msgid "PAN NUMBER"
 msgstr ""
 
-#: donation/forms.py:26
+#: donation/forms.py:28
 msgid "PAN is required as per government regulations."
 msgstr ""
 
-#: donation/forms.py:30
+#: donation/forms.py:31
+msgid "ADDRESS"
+msgstr ""
+
+#: donation/forms.py:34
+msgid "Address is required as per government regulations."
+msgstr ""
+
+#: donation/forms.py:38
+msgid "I am a citizen of India*"
+msgstr ""
+
+#: donation/forms.py:44
+msgid "Payment method"
+msgstr ""
+
+#: donation/forms.py:48
 msgid "AMOUNT"
 msgstr ""
 
-#: donation/forms.py:35
+#: donation/forms.py:55
 msgid "TYPE"
 msgstr ""
 
-#: donation/forms.py:41
+#: donation/forms.py:61
 msgid "DURATION"
 msgstr ""
 
-#: donation/forms.py:45
-msgid "I declare that I am an Indian citizen"
-msgstr ""
-
-#: donation/forms.py:52
+#: donation/forms.py:67
 msgid "Sorry, we can accept donations from Indians only."
 msgstr ""
 
-#: donation/forms.py:59
+#: donation/forms.py:74
 msgid "Term should be at least 2 years for Yearly donation"
+msgstr ""
+
+#: donation/forms.py:80
+msgid "Please enter amount"
 msgstr ""
 
 #: donation/templates/donation/donate_form.html:5
@@ -2515,184 +2406,55 @@ msgstr ""
 msgid "Donate to %(site_name)s"
 msgstr ""
 
-#: donation/templates/donation/donate_form.html:34
+#: donation/templates/donation/donate_form.html:39
 msgid ""
 "At present, we can only accept donations in Indian rupees by Indian "
 "citizens. All donations made to the CounterMedia Trust are eligible for "
 "exemption under Section 80G of the Income Tax Act, 1961. Here is a copy of "
-"our <a href=\"/media/uploads/Donate/80g_certificate.jpg\" target=\"_blank"
+"our <a href=\"/media/uploads/Donate/80_certificate_2.pdf\" target=\"_blank"
 "\">exemption certificate.</a>"
 msgstr ""
 
-#: donation/templates/donation/donate_form.html:46
+#: donation/templates/donation/donate_form.html:50
 #, python-format
 msgid ""
 "In 2014-15, only about <span class=\"highlight\">0.24%% of front page news</"
-"span> came out of rural India. We want to change that. We can do this without governments – and will. We can’t do it without you."
+"span> came out of rural India. We want to change that. We can do this "
+"without governments – and will. We can’t do it without you."
 msgstr ""
 
-#: donation/templates/donation/donate_form.html:52
-#, fuzzy
-#| msgid ""
-#| "We can do this without governments – and will. We can’t do it without you."
-msgid ""
-"We want to change that.<br/><br/> We can do this without governments – and "
-"will. <u>We can’t do it without you.</u>"
-msgstr ""
-"Nous pouvons le faire sans gouvernements - et le ferons. Nous ne pouvons pas "
-"le faire sans vous."
-
-#: donation/templates/donation/donate_form.html:62
-msgid "Other ways to donate"
+#: donation/templates/donation/donate_form.html:57
+msgid "Frequently Asked Questions"
 msgstr ""
 
-#: donation/templates/donation/donate_form.html:63
-msgid "PAYMENT BY CHEQUE OR DEMAND DRAFT"
+#: donation/templates/donation/donate_form.html:61
+msgid "I sent PARI a donation. How do I get a receipt?"
 msgstr ""
 
 #: donation/templates/donation/donate_form.html:64
 msgid ""
-"Pay by cheque/DD in favour of the <strong>“CounterMedia Trust”</strong> and "
-"send it to us by courier/post along with your contact details – name, "
-"address, telephone number, e-mail ID and PAN number."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:69
-msgid ""
-"Send by courier / post to:<br/> <strong>CounterMedia Trust</strong> <br/> c/"
-"o P. Sainath, 27/43 Sagar Sangam, Bandra Reclamation, Mumbai 400050, "
-"Maharashtra, India."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:77
-msgid "PAYMENT BY BANK/ WIRE TRANSFER"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:78
-msgid "Payable to: <strong>CounterMedia Trust</strong>"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:79
-msgid ""
-"Bank and branch: HDFC Bank, Aundh<br/> Address: 93, Anand Park, Rajyog "
-"Creations, Off ITI Road, Aundh, Pune 411007, Maharashtra.<br/> Account "
-"Number: 50100091804541<br/> MICR Code: 411240005<br/> IFSC Code: HDFC0000052"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:85
-msgid ""
-"And send an email to donate@ruralindiaonline.org mentioning the transaction "
-"reference number, amount and date of transfer, along with your contact "
-"details."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:86
-#: donation/templates/donation/donate_form.html:123
-msgid "Please fill the form below after you have sent in your donation."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:89
-msgid "IMPS"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:90
-msgid ""
-"Payment by mobile phone using Immediate Payment Service (IMPS).<br/> Please "
-"go through the following methods of mobile payment enabled by the National "
-"Payments Corporation of India (NPCI)."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:93
-msgid ""
-"One easy way to do this is through the National Unified USSD Platform (NUUP)"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:94
-msgid ""
-"The following has been reproduced from <a href=\"http://www.npci.org.in/"
-"documents/FAQs-NUUP.pdf\" target=\"_blank\">http://www.npci.org.in/documents/"
-"FAQs-NUUP.pdf</a>"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:95
-msgid "Fund transfer using IFSC and account number:"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:99
-msgid "Dial *99# from your mobile handset."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:102
-msgid ""
-"The NUUP welcome screen will appear asking you to enter your bank’s 4-digit "
-"IFS code."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:105
-msgid ""
-"After entering a valid IFS code, the NUUP menu will appear with different "
-"options of available services enabled for your bank."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:108
-msgid "Enter 4 for Fund Transfer using IFSC and account number and submit."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:111
-msgid ""
-"On subsequent screens enter the MPIN and the last 4 digits of the account "
-"number (optional)."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:113
-msgid "Beneficiary account number"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:114
-msgid "IFS code"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:115
-msgid "Amount"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:116
-msgid "Remarks (optional) will appear."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:120
-msgid "A confirmation screen will appear."
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:133
-msgid "THE FORM"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:139
-msgid "Frequently Asked Questions"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:141
-msgid "I sent PARI a donation. How do I get a receipt?"
-msgstr ""
-
-#: donation/templates/donation/donate_form.html:142
-msgid ""
 "Please make sure you include your email address in the donation form when "
 "you make a contribution to PARI.  A receipt will be sent to you in 4 to 8 "
 "weeks by email. You may download the 80G certificate <a href=\"/media/"
-"uploads/Donate/80g_certificate.jpg\" target=\"_blank\">here</a>."
+"uploads/Donate/80_certificate_2.pdf\" target=\"_blank\">here</a>."
 msgstr ""
 
-#: donation/templates/donation/donate_form.html:149
+#: donation/templates/donation/donate_form.html:74
 msgid "I live abroad. Can I send PARI a donation?"
 msgstr ""
 
-#: donation/templates/donation/donate_form.html:153
+#: donation/templates/donation/donate_form.html:78
+msgid ""
+"You can send PARI a donation only from an Indian bank account, in Indian "
+"rupees. We are currently not registered with FCRA for accepting foreign "
+"funds."
+msgstr ""
+
+#: donation/templates/donation/donate_form.html:88
 msgid "Is there any other way in which I can contribute?"
 msgstr ""
 
-#: donation/templates/donation/donate_form.html:154
+#: donation/templates/donation/donate_form.html:91
 msgid ""
 "Apart from donating money and equipment, you can provide PARI copies of "
 "photo collections (new and old), pertaining to rural India. We are also "
@@ -2705,7 +2467,7 @@ msgstr ""
 msgid " Thank you for donating to %(site_name)s. "
 msgstr ""
 
-#: donation/views.py:181
+#: donation/views.py:209
 msgid "Donation received"
 msgstr ""
 
@@ -2932,204 +2694,208 @@ msgstr ""
 msgid "New on PARI"
 msgstr ""
 
-#: pari/settings/base.py:215
+#: pari/settings/base.py:207 pari/settings/local.py:6
 msgid "Andaman and Nicobar Islands"
 msgstr ""
 
-#: pari/settings/base.py:216
+#: pari/settings/base.py:208 pari/settings/local.py:7
 msgid "Andhra Pradesh"
 msgstr ""
 
-#: pari/settings/base.py:217
+#: pari/settings/base.py:209 pari/settings/local.py:8
 msgid "Arunachal Pradesh"
 msgstr ""
 
-#: pari/settings/base.py:218
+#: pari/settings/base.py:210 pari/settings/local.py:9
 msgid "Assam"
 msgstr ""
 
-#: pari/settings/base.py:219
+#: pari/settings/base.py:211 pari/settings/local.py:10
 msgid "Bihar"
 msgstr ""
 
-#: pari/settings/base.py:220
+#: pari/settings/base.py:212 pari/settings/local.py:11
 msgid "Chandigarh"
 msgstr ""
 
-#: pari/settings/base.py:221
+#: pari/settings/base.py:213 pari/settings/local.py:12
 msgid "Chhattisgarh"
 msgstr ""
 
-#: pari/settings/base.py:222
+#: pari/settings/base.py:214 pari/settings/local.py:13
 msgid "Dadra and Nagar Haveli"
 msgstr ""
 
-#: pari/settings/base.py:223
+#: pari/settings/base.py:215 pari/settings/local.py:14
 msgid "Daman and Diu"
 msgstr ""
 
-#: pari/settings/base.py:224
+#: pari/settings/base.py:216 pari/settings/local.py:15
 msgid "National Capital Territory of Delhi"
 msgstr ""
 
-#: pari/settings/base.py:225
+#: pari/settings/base.py:217 pari/settings/local.py:16
 msgid "Goa"
 msgstr ""
 
-#: pari/settings/base.py:226
+#: pari/settings/base.py:218 pari/settings/local.py:17
 msgid "Gujarat"
 msgstr ""
 
-#: pari/settings/base.py:227
+#: pari/settings/base.py:219 pari/settings/local.py:18
 msgid "Haryana"
 msgstr ""
 
-#: pari/settings/base.py:228
+#: pari/settings/base.py:220 pari/settings/local.py:19
 msgid "Himachal Pradesh"
 msgstr ""
 
-#: pari/settings/base.py:229
+#: pari/settings/base.py:221 pari/settings/local.py:20
 msgid "Jammu and Kashmir"
 msgstr ""
 
-#: pari/settings/base.py:230
+#: pari/settings/base.py:222 pari/settings/local.py:21
 msgid "Jharkhand"
 msgstr ""
 
-#: pari/settings/base.py:231
+#: pari/settings/base.py:223 pari/settings/local.py:22
 msgid "Karnataka"
 msgstr ""
 
-#: pari/settings/base.py:232
+#: pari/settings/base.py:224 pari/settings/local.py:23
 msgid "Kerala"
 msgstr ""
 
-#: pari/settings/base.py:233
+#: pari/settings/base.py:225 pari/settings/local.py:24
 msgid "Lakshadweep"
 msgstr ""
 
-#: pari/settings/base.py:234
+#: pari/settings/base.py:226 pari/settings/local.py:25
 msgid "Madhya Pradesh"
 msgstr ""
 
-#: pari/settings/base.py:235
+#: pari/settings/base.py:227 pari/settings/local.py:26
 msgid "Maharashtra"
 msgstr ""
 
-#: pari/settings/base.py:236
+#: pari/settings/base.py:228 pari/settings/local.py:27
 msgid "Manipur"
 msgstr ""
 
-#: pari/settings/base.py:237
+#: pari/settings/base.py:229 pari/settings/local.py:28
 msgid "Meghalaya"
 msgstr ""
 
-#: pari/settings/base.py:238
+#: pari/settings/base.py:230 pari/settings/local.py:29
 msgid "Mizoram"
 msgstr ""
 
-#: pari/settings/base.py:239
+#: pari/settings/base.py:231 pari/settings/local.py:30
 msgid "Nagaland"
 msgstr ""
 
-#: pari/settings/base.py:240
+#: pari/settings/base.py:232 pari/settings/local.py:31
 msgid "Odisha"
 msgstr ""
 
-#: pari/settings/base.py:241
+#: pari/settings/base.py:233 pari/settings/local.py:32
 msgid "Puducherry"
 msgstr ""
 
-#: pari/settings/base.py:242
+#: pari/settings/base.py:234 pari/settings/local.py:33
 msgid "Punjab"
 msgstr ""
 
-#: pari/settings/base.py:243
+#: pari/settings/base.py:235 pari/settings/local.py:34
 msgid "Rajasthan"
 msgstr ""
 
-#: pari/settings/base.py:244
+#: pari/settings/base.py:236 pari/settings/local.py:35
 msgid "Sikkim"
 msgstr ""
 
-#: pari/settings/base.py:245
+#: pari/settings/base.py:237 pari/settings/local.py:36
 msgid "Tamil Nadu"
 msgstr ""
 
-#: pari/settings/base.py:246
+#: pari/settings/base.py:238 pari/settings/local.py:37
 msgid "Telangana"
 msgstr ""
 
-#: pari/settings/base.py:247
+#: pari/settings/base.py:239 pari/settings/local.py:38
 msgid "Tripura"
 msgstr ""
 
-#: pari/settings/base.py:248
+#: pari/settings/base.py:240 pari/settings/local.py:39
 msgid "Uttar Pradesh"
 msgstr ""
 
-#: pari/settings/base.py:249
+#: pari/settings/base.py:241 pari/settings/local.py:40
 msgid "Uttarakhand"
 msgstr ""
 
-#: pari/settings/base.py:250
+#: pari/settings/base.py:242 pari/settings/local.py:41
 msgid "West Bengal"
 msgstr ""
 
-#: pari/settings/base.py:267
+#: pari/settings/base.py:259 pari/settings/base.py:310
 msgid "English"
 msgstr ""
 
-#: pari/settings/base.py:268
+#: pari/settings/base.py:260
 msgid "Assamese"
 msgstr ""
 
-#: pari/settings/base.py:269
+#: pari/settings/base.py:261 pari/settings/base.py:312
 msgid "Bengali"
 msgstr ""
 
-#: pari/settings/base.py:270
+#: pari/settings/base.py:262
 msgid "Gujarati"
 msgstr ""
 
-#: pari/settings/base.py:271
+#: pari/settings/base.py:263 pari/settings/base.py:311
 msgid "Hindi"
 msgstr ""
 
-#: pari/settings/base.py:272
+#: pari/settings/base.py:264
 msgid "Kannada"
 msgstr ""
 
-#: pari/settings/base.py:273
+#: pari/settings/base.py:265
 msgid "Malayalam"
 msgstr ""
 
-#: pari/settings/base.py:274
+#: pari/settings/base.py:266 pari/settings/base.py:313
 msgid "Marathi"
 msgstr ""
 
-#: pari/settings/base.py:275
+#: pari/settings/base.py:267
 msgid "Mizo"
 msgstr ""
 
-#: pari/settings/base.py:276
+#: pari/settings/base.py:268 pari/settings/base.py:314
 msgid "Odia"
 msgstr ""
 
-#: pari/settings/base.py:277
+#: pari/settings/base.py:269
 msgid "Punjabi"
 msgstr ""
 
-#: pari/settings/base.py:278
+#: pari/settings/base.py:270
 msgid "Telugu"
 msgstr ""
 
-#: pari/settings/base.py:279
+#: pari/settings/base.py:271
 msgid "Tamil"
 msgstr ""
 
-#: pari/settings/base.py:280
+#: pari/settings/base.py:272 pari/settings/base.py:315
 msgid "Urdu"
+msgstr ""
+
+#: pari/settings/base.py:273
+msgid "French"
 msgstr ""
 
 #: resources/models.py:31 resources/models.py:47 resources/models.py:61
@@ -3408,3 +3174,14 @@ msgstr ""
 #: search/templates/wagtailadmin/pages/search_results.html:29
 msgid "Enter a search term above"
 msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "We can do this without governments – and will. We can’t do it without "
+#~| "you."
+#~ msgid ""
+#~ "We want to change that.<br/><br/> We can do this without governments – "
+#~ "and will. <u>We can’t do it without you.</u>"
+#~ msgstr ""
+#~ "Nous pouvons le faire sans gouvernements - et le ferons. Nous ne pouvons "
+#~ "pas le faire sans vous."

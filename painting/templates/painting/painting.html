@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load i18n wagtailimages_tags %}
+{% load painting_filters %}
+
+{% block feed_block %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "painting_feeds" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "painting_feeds" %}">
+{% endblock %}
+
+{% block meta_title %}{% trans "paintings" %}{% endblock %}
+{% block title %}{% trans "paintings" %}{% endblock %}
+{% block meta_description %}Meet {{ painting.title }}, {{ painting.occupation }} from {{ painting.location.district }} in {{ painting.location.state }}: one of the many rural Indians you can meet in PARI's vast paintingS database.{% endblock %}
+
+{% block opengraph_block %}
+     {% if slug %}
+         {% include "core/includes/media_sharing_meta.html" with title=painting.title_to_share description=share_sub_heading url=request.get_full_path type="url" image_url=painting.featured_image.file.url twitter_card="summary" %}
+    {% else %}
+        {% include "core/includes/media_sharing_meta.html" with title="paintingS" description=share_sub_heading url=request.get_full_path type="url" image_url=STATIC_URL|add:"img/share_paintings_collage.jpg" %}
+    {% endif %}
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{{ STATIC_URL }}album/js/magnific-popup.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}painting/js/lightbox.js"></script>
+{% endblock %}
+
+{% block extra_uncompressed_js %}
+{% if slug %}
+    <script type="text/javascript">
+        $("document").ready(function() {
+            setTimeout(function() {
+                $('a[data-slug="{{ slug }}"]').click();
+                }, 10);
+        });
+    </script>
+{% endif %}
+{% endblock %}
+
+{% block extra_css %}
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}album/css/magnific-popup.css">
+    <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}css/v2/pages/paintings/paintings.less">
+{#    <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}css/v2/layout/components/main-content/story-grid.less">#}
+{% endblock %}
+
+
+{% block breadcrumb_menu %}
+    <li class="active">{% trans "paintings" %}</li>
+{% endblock %}
+
+{% block main %}
+  <div class="container content-container">
+
+    <div class="gallery-title">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 gallery-title-icon go-back-paintings">
+            <span class="prev">
+                <a class="link-light" itemprop="url" href="{% url "painting-list" %}">
+                    <i class="fa fa-angle-left"></i>
+                    <span itemprop="name">{% trans "paintingS DIRECTORY" %}</span>
+                </a>
+            </span>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+            {% include "includes/page_content_header/heading.html" %}
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 gallery-title-icon painting-upload-share">
+            <span class="painting-upload">
+                <a class="link-light" href="{% url "static_page" slug="contribute-to-paintings" %}">
+                    <i class="fa fa-upload" aria-hidden="true"></i>
+                    <span class="link-text" itemprop="name">{% trans "Upload a painting" %}</span>
+                </a>
+            </span>
+            {% with request.build_absolute_uri as url %}
+                <span class="gallery-social-icon">
+                    <a href="https://twitter.com/intent/tweet?url={{ url|urlencode }}&amp;hashtags=RuralIndiaOnline&amp;via=PARINetwork" target="_blank" class="link-light">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://paintingbook.com/sharer.php?u={{ url|urlencode }}&t={{ title|urlencode }}" target="_blank" class="link-light">
+                        <i class="fa fa-paintingbook" aria-hidden="true"></i>
+                    </a>
+                </span>
+            {% endwith %}
+        </div>
+    </div>
+    </div>
+
+    <div class="row filter-lang">
+        <span  class="filter-label">{% trans "paintings of <b>district names</b> starting with" %}</span>
+        <span class="filter-value">
+            <div class="dropdown custom-dropdown" id="language_dd">
+                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="selected"></span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu fix-height-dropdown fix-width-list-dropdown" name="lang">
+                    {% for letter in "abcdefghijklmnopqrstuvwxyz" %}
+                        <li {% ifequal alphabet letter %}selected='selected'{% endifequal %} value="{% url "painting-detail" alphabet=letter %}">{{ letter|capfirst }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <script type="text/javascript">
+              document.addEventListener("DOMContentLoaded", function() {
+                var selected = $("#language_dd ul li[selected='selected']");
+                $("#language_dd button .selected").text(selected.text());
+                $("#language_dd ul li").on("click", function() {
+                  $("#language_dd button .selected").text($(this).text());
+                  window.location.href = $(this).attr("value");
+                });
+              });
+            </script>
+
+
+        </span>
+    </div>
+
+    <ul>
+      <div class="popup-gallery story-grid" data-url="{% url "painting-detail" alphabet=alphabet %}">
+      {% for painting in paintings %}
+        <li class="tile">
+
+            {% image painting.image original as painting_image_original %}
+            {% image painting.image height-1080 as painting_image_resized %}
+            {% image painting.image fill-514x514 as painting_image_cropped %}
+            {% image painting.original_image_1 original as original_image_1 %}
+
+            <div class="image-wrapper">
+                <a href="{{ painting.get_absolute_url }}"
+                   class="image-tag mfp-image"
+                   data-painting-details="{% spaceless %} {% include 'painting/includes/painting_details.html' with painting=painting painting_image=painting_image_original only %} {% endspaceless %}"
+                   data-slug="{{ painting.slug }}"
+                   data-original-image-src="{{ painting_image_resized.url }}"
+                    {% if painting.original_image_1 %}
+                        data-origin-image-src="{{ original_image_1.url }}"
+                    {% else %}
+                        data-origin-image-src=""
+                    {% endif %}
+                   data-url="{{ painting.get_absolute_url }}">
+                    <img class="img-responsive grid-image no-border" src="{{ painting_image_cropped.url }}" alt="{{ painting|alt_text }}">
+                </a>
+            </div>
+
+            <div class="caption">
+                <div class="name">{{painting.title|capfirst }}</div>
+                <div class="district">{{ painting.matching_district|capfirst }}</div>
+            </div>
+        </li>
+    {% empty %}
+      <div class="error-message-holder">
+          {% url "static_page" slug="contribute-to-paintings" as contribute %}
+	    <p class="text-center text-danger">{% blocktrans trimmed %} Sorry! There are no paintings on this page. Please consider <a href={{ contribute }}>contributing</a> one. {% endblocktrans %}</p>
+      </div>
+    {% endfor %}
+    </div>
+    </ul>
+  </div>
+{% endblock %}

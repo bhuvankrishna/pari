@@ -12,6 +12,7 @@ from wagtail.images.blocks import ImageChooserBlock
 from album.models import Album
 from core.widgets import JqueryChosenSelectMultipleWithAddObject
 from face.models import Face
+from painting.models import painting
 from location.models import Location
 from resources.models import Resource
 import operator
@@ -158,6 +159,13 @@ class FaceBlock(blocks.StructBlock):
         icon = 'image'
         template = 'article/blocks/face.html'
 
+class paintingBlock(blocks.StructBlock):
+    painting = PageTypeChooserBlock(for_models=[painting])
+
+    class Meta:
+        icon = 'image'
+        template = 'article/blocks/painting.html'
+
 
 class ParagraphWithBlockQuoteBlock(blocks.StructBlock):
     quote = RichTextMiniBlock()
@@ -290,7 +298,7 @@ class ImageWithBlockQuote(blocks.StructBlock):
 
 
 class ParagraphWithPageBlock(blocks.StructBlock):
-    page = PageTypeChooserBlock(for_models=['article.models.Article', Album, Face, Resource])
+    page = PageTypeChooserBlock(for_models=['article.models.Article', Album, Face, painting, Resource])
     align_image = blocks.ChoiceBlock(choices=ALIGNMENT_CHOICES, default=ALIGNMENT_CHOICES[0][0])
     content = ParagraphBlock()
 

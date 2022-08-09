@@ -7,7 +7,7 @@
             <div class="card-holder ">
 
                 <div class="image">
-                    {% if page_model.content_type.model == "article" or page_model.content_type.model == "album" or page_model.content_type.model == "face" %}
+                    {% if page_model.content_type.model == "article" or page_model.content_type.model == "album" or page_model.content_type.model == "face" or page_model.content_type.model == "painting" %}
                         {% image page_model.featured_image width-270 as page_image %}
                         <a href="{{ page_model.get_absolute_url }}">
                             <img src="{{ page_image.url }}" class="ignore-carousel"/>
@@ -51,6 +51,14 @@
                             {% endfor %}
                         {% endif %}
                         {% if page_model.content_type.model == "face" %}
+                            {{ page_model.occupation }}
+                            {% with page_model.location as location %}
+                                {% if location %} from {{ location.name }},
+                                    {% if location.sub_district_name %}{{ location.sub_district_name }}, {% endif %}
+                                    {{ location.district }}, {{ location.state }}{% endif %}
+                            {% endwith %}
+                        {% endif %}
+                        {% if page_model.content_type.model == "painting" %}
                             {{ page_model.occupation }}
                             {% with page_model.location as location %}
                                 {% if location %} from {{ location.name }},

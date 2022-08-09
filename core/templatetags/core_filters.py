@@ -32,7 +32,7 @@ def get_locations(obj):
     type_ = obj.__class__.__name__.lower()
     if type_ == 'article':
         return obj.locations.all()
-    if type_ == 'album' or type_ == 'face':
+    if type_ == 'album' or type_ == 'face' or type_ == 'painting':
         return obj.locations
     return []
 
@@ -41,7 +41,7 @@ def get_photographers(obj):
     type_ = obj.__class__.__name__.lower()
     if type_ == 'article':
         return obj.beginning_authors_with_role()
-    if type_ == 'album' or type_ == 'face':
+    if type_ == 'album' or type_ == 'face' or type_ == 'painting':
         return {'None': obj.photographers}
     return []
 

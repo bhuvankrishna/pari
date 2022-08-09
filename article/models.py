@@ -318,6 +318,7 @@ class Article(Page):
                 {"article_article__get_authors_or_photographers_filter": {"order": "desc"}},
                 {"album_album__get_authors_or_photographers_filter": {"order": "desc"}},
                 {"face_face__get_authors_or_photographers_filter": {"order": "desc"}},
+                {"painting_painting__get_authors_or_photographers_filter": {"order": "desc"}},
                 {"first_published_at_filter": "desc"}
             ]
         }

@@ -10,6 +10,7 @@ from wagtail.core.models import Site
 from article.models import Article
 from album.models import Album
 from face.models import Face
+from painting.models import painting
 from resources.models import Resource
 
 import itertools
@@ -101,6 +102,7 @@ class AllFeed(BaseFeed):
             Article.objects.live().filter(**kwargs),
             Album.objects.live().filter(**kwargs),
             Face.objects.live().filter(**kwargs),
+            painting.objects.live().filter(**kwargs),
             Resource.objects.live().filter(**kwargs),
         )
         return sorted(
@@ -189,6 +191,31 @@ class FaceFeed(BaseFeed):
             return item.description
         except AttributeError:
             return ''
+
+class paintingFeed(BaseFeed):
+    title = _("PARI painting feed")
+    link = "/feeds/painting/"
+
+    def __init__(self, *args, **kwargs):
+        super(paintingFeed, self).__init__(*args, **kwargs)
+        self.description = _("painting updates on the PARI site "
+                             "over the past {0} days".format(self.days_ago))
+
+    def items(self):
+        x_days_ago = timezone.now() - datetime.timedelta(days=self.days_ago)
+        kwargs = {
+            "first_published_at__gte": x_days_ago,
+        }
+        if self.language:
+            kwargs["language"] = self.language
+        return painting.objects.live().order_by('-first_published_at').filter(**kwargs)
+
+    def item_description(self, item):
+        try:
+            return item.description
+        except AttributeError:
+            return ''
+
 
 
 

@@ -47,6 +47,7 @@ class Command(BaseCommand):
         PageFactory.create(title="Header", path="00010007")
         PageFactory.create(title="Articles", path="00010005")
         PageFactory.create(title="Albums", path="00010006")
+	PageFactory.create(title="Painting", path="00010002000100068")
 
         category = Category.objects.get(slug="photozone")
         video_category = Category.objects.get(slug="videozone")

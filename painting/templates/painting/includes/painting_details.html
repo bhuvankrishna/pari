@@ -1,0 +1,85 @@
+{% load i18n wagtailimages_tags %}
+
+{% if painting.title %}
+    <h3 class='painting-name'>{{painting.title }}</h3>
+{% endif %}
+
+{% if painting.age %}
+    <div class='painting-label'>{% trans "AGE" %}</div>
+    <div class='painting-value'>{{ painting.age }}</div>
+{% endif %}
+
+{% if painting.occupation %}
+    <div class='painting-label'>{% trans "OCCUPATION" %}</div>
+    <div class='painting-value'>{{ painting.occupation }}</div>
+{% endif %}
+
+{% if painting.occupation_of_parent %}
+    <div class='painting-label'>{% trans "PARENTS' OCCUPATION" %}</div>
+    <div class='painting-value'>{{ painting.occupation_of_parent }}</div>
+{% endif %}
+
+{% if painting.adivasi %}
+    <div class='painting-label'>{% trans "ADIVASI" %}</div>
+    <div class='painting-value'>{{ painting.adivasi }}</div>
+{% endif %}
+
+{% if painting.location.name %}
+    <div class='painting-label'>{% trans "VILLAGE" %}</div>
+    <div class='painting-value'>{{ painting.location.name }}</div>
+{% endif %}
+
+{% if painting.location.panchayat %}
+    <div class='painting-label'>{% trans "PANCHAYAT" %}</div>
+    <div class='painting-value'>{{ painting.location.panchayat }}</div>
+{% endif %}
+
+{% if painting.location.sub_district_name and painting.location.sub_district_type %}
+    <div class='painting-label'>{{ painting.location.sub_district_type|upper }}</div>
+    <div class='painting-value'>{{ painting.location.sub_district_name }}</div>
+{% endif %}
+
+{% if painting.location.district %}
+    <div class='painting-label'>{% trans "DISTRICT" %}</div>
+    <div class='painting-value'>{{ painting.location.district }}</div>
+{% endif %}
+
+{% if painting.location.state %}
+    <div class='painting-label'>{% trans "STATE" %}</div>
+    <div class='painting-value'>{{ painting.location.state }}</div>
+{% endif %}
+
+{% if painting.image.photographers.all %}
+    <div class='painting-label'>{% trans "PHOTOGRAPHER" %}</div>
+    <div class='painting-value'>{{ painting.image.photographers.all|join:", "}}</div>
+{% endif %}
+
+{% if painting.image.camera %}
+    <div class='painting-label'>{% trans "CAMERA" %}</div>
+    <div class='painting-value'>{{ painting.image.camera }}</div>
+{% endif %}
+
+{% if painting.image.date %}
+    <div class='painting-label'>{% trans "DATE PHOTO WAS TAKEN" %}</div>
+    <div class='painting-value'>{{ painting.image.date|date:'M d, Y' }}</div>
+{% endif %}
+
+{% if painting.location not in painting.image.locations.all and painting.image.locations.all %}
+    <div class='painting-label'>{% trans "PHOTO TAKEN IN" %}</div>
+    <div class='painting-value'>{{ painting.image.locations.all|join:". "}}</div>
+{% endif %}
+
+{% if painting.quote  %}
+    <div class='painting-label'>{% trans "QUOTE" %}</div>
+    <div class='painting-value'>{{ painting.quote }}</div>
+{% endif %}
+
+{% if painting.additional_info %}
+    <div class='painting-label'>{% trans "ADDITIONAL INFORMATION" %}</div>
+    <div class='painting-value'>{{ painting.additional_info }}</div>
+{% endif %}
+
+<div class='external-link'>
+    <a href='{{ painting_image.url }}' class='fa fa-external-link' target='_blank'></a>
+</div>
+

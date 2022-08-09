@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load i18n wagtailimages_tags %}
+{% load painting_filters %}
+
+{% block feed_block %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "painting_feeds" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "painting_feeds" %}">
+{% endblock %}
+
+{% block meta_title %}{% trans "paintings" %}{% endblock %}
+{% block title %}{% trans "paintings" %}{% endblock %}
+{% block meta_description %}{% blocktrans %}PARI aims to collect a photo of one man, one woman, and one child from every district in India. Check out our progress so far.{% endblocktrans %}{% endblock %}
+
+{% block extra_js %}
+
+{% endblock %}
+
+{% block opengraph_block %}
+    {% include "core/includes/media_sharing_meta.html" with title="paintingS" description=sub_heading url=request.get_full_path type="url" image_url=STATIC_URL|add:"img/share_paintings_collage.jpg" %}
+{% endblock %}
+
+{% block extra_css %}
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}album/css/magnific-popup.css">
+    <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}css/v2/pages/paintings/paintings.less">
+    <link type="text/less" rel="stylesheet"
+          href="{{ STATIC_URL }}css/v2/layout/components/main-content/story-grid.less">
+{% endblock %}
+
+
+{% block breadcrumb_menu %}
+    <li class="active">{% trans "paintings" %}</li>
+{% endblock %}
+
+{% block main %}
+    <div class="container content-container">
+
+        <div class="gallery-title">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 gallery-title-icon go-back">
+                    {% include "includes/page_content_header/gallery_back_button.html" %}
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                    {% include "includes/page_content_header/heading.html" %}
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 gallery-title-icon painting-upload-share">
+                <span class="painting-upload" itemscope itemtype="https://schema.org/name">
+                    <a class="link-light" href="{% url "static_page" slug="contribute-to-paintings" %}">
+                        <i class="fa fa-upload" aria-hidden="true"></i>
+                        <span class="link-text" itemprop="name">{% trans "Upload a painting" %}</span>
+                    </a>
+                </span>
+                    {% with request.build_absolute_uri as url %}
+                        <span class="gallery-social-icon">
+                            <a href="https://twitter.com/intent/tweet?url={{ url|urlencode }}&amp;hashtags=RuralIndiaOnline&amp;via=PARINetwork" target="_blank" class="link-light">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://paintingbook.com/sharer.php?u={{ url|urlencode }}&t={{ title|urlencode }}"
+                           target="_blank" class="link-light">
+                            <i class="fab fa-paintingbook" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row filter-lang">
+            <span class="filter-label">{% trans "Alphabetical" %}</span>
+            <span class="filter-value">
+              <div class="dropdown custom-dropdown" id="language_dd">
+                  <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <span class="selected">{% trans "District" %}</span>
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu fix-height-dropdown fix-width-dropdown" name="lang">
+                      {% for painting in paintings %}
+                          <li value="{% url "painting-detail" alphabet=painting.location.district|lower|first %}">{{ painting.district|lower|first|capfirst }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+              <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function() {
+                  $("#language_dd ul li").on("click", function() {
+                    $("#language_dd button .selected").text($(this).text());
+                    window.location.href = $(this).attr("value");
+                  });
+                });
+              </script>
+
+          </span>
+        </div>
+
+
+            <div class="story-grid">
+             <ul>
+                {% for painting in paintings %}
+                    <li class="tile">
+                        <div class="image-wrapper">
+                            <a href="{% url "painting-detail" alphabet=painting.location.district|lower|first %}">
+                                {% image painting.image fill-512x512 as painting_image %}
+                                <img class="img-responsive grid-image" src="{{ painting_image.url }}"
+                                     alt="{{ painting|alt_text }}">
+                                <span class="alphabat-holder">
+                                    <span class="alphabat">{{ painting.district|lower|first }}</span>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    {% empty %}
+                    <div class="error-message-holder">
+                        {% url "static_page" slug="contribute-to-paintings" as contribute %}
+                        <p class="text-center text-danger">{% blocktrans trimmed %}Sorry! There are no paintings on this page. Please consider <a href={{ contribute }}>contributing</a> one.{% endblocktrans %}</p>
+                    </div>
+                {% endfor %}
+             </ul>
+            </div>
+    </div>
+{% endblock %}

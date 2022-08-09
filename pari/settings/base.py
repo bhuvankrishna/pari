@@ -25,13 +25,13 @@ PROJECT_ROOT = dirname(dirname(dirname(abspath(__file__))))
 SECRET_KEY = 'vcg^g$-6bce@3hk+bmiyn^exoe4r()+a9g%ypo7p(+fy*q*8em'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://ruralindiaonline.org'
+BASE_URL = 'http://test1.ruralindiaonline.org'
 
 WAGTAIL_AUTO_UPDATE_PREVIEW = True
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'django.contrib.sites',
+    'django_extensions',
 
     'compressor',
     'taggit',
@@ -61,6 +62,8 @@ INSTALLED_APPS = [
     'face',
     'feeds',
     'resources',
+    'painting',
+    'paintings',
     'search',
     'news',
     'donation',
@@ -270,6 +273,9 @@ LANGUAGES = (
     ("te", _("Telugu")),
     ("ta", _("Tamil")),
     ("ur", _("Urdu")),
+    ("fr", _("French")),
+    ("ge", _("German")),
+    ("hne", _("Chhattisgarhi")),
 )
 
 EXTRA_LANG_INFO = {
@@ -278,6 +284,12 @@ EXTRA_LANG_INFO = {
         'code': 'as',
         'name': 'Assamese',
         'name_local': u'Assamese',
+    },
+    'hne': {
+        'bidi': False,
+        'code': 'hne',
+        'name': 'Chhattisgarhi',
+        'name_local': u'Chhattisgarhi',
     },
     'gu': {
         'bidi': False,
@@ -312,6 +324,7 @@ SUPPORTED_LANGUAGES = (
     ("mr", _("Marathi")),
     ("or", _("Odia")),
     ("ur", _("Urdu")),
+    ("fr", _("French")),
 )
 
 SITE_ID = 1
