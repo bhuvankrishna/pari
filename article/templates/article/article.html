@@ -182,6 +182,10 @@
                     <span itemprop="datePublished" class="date link-dark">{{ article.first_published_at|date }}</span>
                 </a>
                 {% endif %}
+                {% if article.id == 14991 %}
+                    <span class="tag-space-both">•</span>
+                    <span itemprop="datePublished" class="date link-dark">Last updated on {{ article.original_published_date|date }}</span>
+                {% endif %}
             </div>
              <h1><span itemprop="headline" id="article-gallery-title">{{ article.title }}</span></h1>
              <p id="article-gallery-strap">{{ article.strap }}</p>
