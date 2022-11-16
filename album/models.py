@@ -42,7 +42,8 @@ class Album(Page):
         InlinePanel('slides', label=_('Slides'), panels=[
             ImageChooserPanel('image'),
             AudioPanel('audio'),
-            RichTextFieldPanel('description')
+            RichTextFieldPanel('description'),
+            RichTextFieldPanel('embed')
         ]),
     ]
 
@@ -134,6 +135,7 @@ class AlbumSlide(Orderable):
     image = models.ForeignKey("core.AffixImage", related_name="album_for_image", null=True, blank=True, on_delete=django.db.models.deletion.CASCADE)
     audio = models.CharField(blank=True, max_length=50)
     description = RichTextField(blank=True)
+    embed = RichTextField(features=['embed'],blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
 

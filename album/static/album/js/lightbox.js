@@ -42,7 +42,11 @@ var Album = {
                 $(".floating-text .description").html(albumDescription);
             }
 
-            $(".thumbnail-list").append('<li class="thumbnail left box"><img src=' + slide.src + ' /></li>');
+            if(slide.embed !== "") {
+                $(".thumbnail-list").append('<li class="thumbnail left box">' + slide.embed + '"/></li>');
+            } else {
+                $(".thumbnail-list").append('<li class="thumbnail left box"><img src=' + slide.src + ' /></li>');
+            }
         });
 
         data.authors.forEach(function (author) {
@@ -228,20 +232,25 @@ function handleCarouselEvents(carouselData) {
     var totalItems = $('.carousel-items .item').length,
         currentIndex = 0,
         isTalkingAlbum = $("div#type-identifier").text() === "talking_album",
+        isFFAlbum = $("div#type-identifier").text() === "ff_album",
         isSlideshowPlaying = !isTalkingAlbum;
 
     updateCurrentPageData();
 
     $("#carousel").carousel({
-        interval: isTalkingAlbum ? 1000 * 60 : 5000,
-        pause: isTalkingAlbum
+        interval: isTalkingAlbum ? 1000 * 60 : (isFFAlbum ? 0: 5000),
+        pause: isTalkingAlbum || isFFAlbum
     });
 
     if(isTalkingAlbum) {
         $("#carousel").carousel("pause");
         $(".play-pause").show();
     } else {
-      $(".play-pause").hide();
+        $(".play-pause").hide();
+    }
+    if(isFFAlbum) {
+        $("#carousel").carousel("pause");
+        $("#playPause").hide();
     }
 
     $('#playPause').click(function () {
@@ -296,7 +305,7 @@ function handleCarouselEvents(carouselData) {
     }
 
     $('#carousel').on('slid.bs.carousel', function () {
-        if ($("div#type-identifier").text() == "talking_album") {
+        if ($("div#type-identifier").text() == "talking_album" || $("div#type-identifier").text()=="ff_album") {
             pauseSlide();
         }
         updateIndexOnSlide();

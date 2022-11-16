@@ -52,10 +52,11 @@
 
 {% block main %}
 
-    <div style="display:none;" id="type-identifier">{{ album_type }}</div>
     <div style="display:none;" id="json-identifier">{{ json_response }}</div>
 
 {% if album.is_freedom_fighters_album is True %}
+<div style="display:none;" id="type-identifier">ff_album</div>
+
   <div class="container article-container">
                 <div class="ff-title-row" style="max-width: 1400px;
                 padding: 20px;
@@ -182,7 +183,7 @@ margin-bottom: 80px; position: sticky;">
               <script id="carouselPage" type="text/x-jsrender">
                 <li class="{{:carouselPageClass}}">
                     <div class="wrapper">
-                        <img src="{{:src_resized}}" />
+                      {{:carousel_html}}
                     </div>
                 </li>
               </script>
@@ -266,8 +267,24 @@ margin-bottom: 80px; position: sticky;">
   <div class="container article-container">
     <div class="row">
        <div class="ff-album-items-gallery" >
+        
            {% for slide in album.slides.all %}
-            <a href="#ff-slider-start" onclick="location.href='#photoAlbum';" data-target="#carousel" data-slide-to="{{ forloop.counter0 }}">
+           <a href="#ff-slider-start" onclick="location.href='#photoAlbum';" data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" style="position: relative;">
+
+            {%  if slide.embed|length > 30 %}
+            <div class="video-play-icon" style="content: '';
+            background: url(/static/img/play-icon.svg);
+            position: absolute;
+            width: 41px;
+            height: 41px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: inline-block;">
+            </div>
+            {% endif %}
               {% image slide.image height-300 as image %}
                 <img class="lazyload" src="{{ image.url }}" data-src="{{ image.url }}" style="padding:5px; height:{{ image.height }}px;" alt="{{ image.alt_text }}"/>
             </a>
@@ -277,6 +294,8 @@ margin-bottom: 80px; position: sticky;">
   </div>
 
 {% else %}
+
+<div style="display:none;" id="type-identifier">{{ album_type }}</div>
 
     <!--  photo album starts here -->
 <div id="photoAlbum" class="article-content-wrapper">
