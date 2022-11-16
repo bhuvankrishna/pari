@@ -1,6 +1,7 @@
 from __future__ import print_function
 import datetime
 from collections import OrderedDict
+import re
 
 from django.urls import reverse
 from django.http import JsonResponse
@@ -97,6 +98,19 @@ def get_slide_detail(album):
         slide_dict['slide_location'] = "%s, %s" % (
         image_location.district, image_location.state) if image_location else ''
         slide_dict['track_id'] = slide.audio
+        
+        embed_value = RichText(slide.embed)
+        embed_html = block.render(embed_value)
+        embed_iframe = re.findall('https.*\?', embed_html)
+        if (len(embed_iframe)>0):
+        # if (len(embed_html)>0):
+            slide_dict['embed'] = '<iframe src="' + embed_iframe[0] + 'showinfo=0&amp;modestbranding=1&amp;feature=oembed&amp;cc_load_policy=1&amp;autohide=1&amp;rel=0" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="max-width: 1200px; position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;" width="75%" height="100%"'
+            # slide_dict['embed'] = embed_html
+            slide_dict['carousel_html'] = slide_dict['embed']
+        else: 
+            slide_dict['embed'] = ""
+            slide_dict['carousel_html'] = '<img src="'+ slide_dict['src_resized'] +'" />'
+
         response_data['slides'].append(slide_dict)
 
     response_data['authors'] = []
