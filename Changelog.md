@@ -1,6 +1,17 @@
 # Changelog
 All the work that goes into the project will be documented here.
 
+## 2022-11-16
+
+### Added
+* Added Embed field to album slides
+* Enable only embed button (one of the RichText features) in embed field
+
+### Modified
+* For freedom fighters album, 
+  * when embed is available for a slide show embed in carousel and use the image in the photos list below carousel
+  * in the images below carousel, add a play icon on top of images that belong to slides with embed
+
 ## 2022-11-09
 
 ### Modified
