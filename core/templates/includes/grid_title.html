@@ -1,7 +1,22 @@
 {% load i18n %}
 <div class="gallery-title">
     <div class="row">
-        {% if title == "PARI Freedom Fighters Gallery" %}{% else %}
+        {% if title == "PARI Freedom Fighters Gallery" %}
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div>
+                <h1 class="title-light text-center title-size">{{ title }}</h1>
+                <div class="paragraph-dark text-center">{% trans sub_heading %}</div>
+                <hr style="border-top: 2px solid #eee; width: 30%;">
+                <div class="text-left">
+                    <p>Launched on August 15, 2022, this gallery is home to photos and videos of India's little-known foot soldiers of freedom. Some of these already appear elsewhere in PARI. But there are many that don't, and this collection could keep growing - both in terms of pictures and videos - and also in that more freedom fighters will be added to our list.</p><br />
+
+                    <p>The gallery is, in effect, a work in progress. Some of the photos here appear in PARI Founder Editor P. Sainath's book, <a href="https://penguin.co.in/book/the-last-heroes/">The Last Heroes: Foot Soldiers of Indian Freedom</a>, published in November 2022 by Penguin Random House India. Readers of the book will find a unique QR code at the end of each chapter, scanning which will bring them to the specific freedom fighter's album in this gallery.</p><br />
+                </div>
+            </div>
+        </div>
+        
+        {% else %}
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 gallery-title-icon go-back">
             <span class="prev">
                 <a class="link-light" href="{% url "gallery-home-page" %}">
@@ -10,8 +25,8 @@
                 </a>
             </span>
         </div>
-        {% endif %}
-        <div {% if title == "PARI Freedom Fighters Gallery" %} class="col-lg-12 col-md-12 col-sm-12 col-xs-12" {% else %} class="col-lg-6 col-md-6 col-sm-4 col-xs-12" {% endif %}>
+
+        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
             <div>
                 <h1 class="title-light text-center title-size">{{ title }}</h1>
                 <div class="paragraph-dark text-center">{% trans sub_heading %}</div>
@@ -25,7 +40,7 @@
                 {% endif %}
             </div>
         </div>
-        {% if title == "PARI Freedom Fighters Gallery" %}{% else %}
+
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 gallery-title-icon share-icon">
             <div class="text-right">
                 {% with request.build_absolute_uri as url %}
