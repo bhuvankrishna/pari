@@ -1,6 +1,12 @@
 # Changelog
 All the work that goes into the project will be documented here.
 
+## 2022-11-28
+
+### Modified
+* For freedom fighters gallery page, change the description [For this, moved description to template file directly so as to allo hyperlinking]
+* For freedom fighters gallery detail page, in the carousel section, now we are showing only description
+
 ## 2022-11-16
 
 ### Added
