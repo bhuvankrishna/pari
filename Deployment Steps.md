@@ -7,6 +7,8 @@ Deployment Date: `2022-12-19` | Last updated: `2022-12-19`
 * Deployment on production
   * Merge the PR https://github.com/bhuvankrishna/pari/pull/9 and https://github.com/bhuvankrishna/pari/pull/10
  
+  * Create a static page article with freedom fighters gallery page content
+ 
   * On the server, as ubuntu user, go to the project root and activate the python environment
     ```sh
     cd ~/pari && source ../pari_env/bin/activate
