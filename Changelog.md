@@ -1,7 +1,7 @@
 # Changelog
 All the work that goes into the project will be documented here.
 
-## 2022-11-28
+## 2022-12-19
 
 ### Added
 * Added a static page article with Freedom Fighters Gallery page text content
