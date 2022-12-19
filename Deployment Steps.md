@@ -24,6 +24,18 @@ Deployment Date: `2022-12-19` | Last updated: `2022-12-19`
     ```sh
     supervisorctl restart pari:gunicorn_pari && service elasticsearch restart
     ```
+    
+  * Generate JS files
+    ```sh
+    python3 manage.py compress
+    ```
+    
+  * Manually modify js file rendered on freedom fighters album detail page
+    * Check the file name and replace it's contents with content from file `static/CACHE/js/output.04af462b3acd.js`
+      ```sh
+      rm static/CACHE/js/filename && cp static/CACHE/js/output.04af462b3acd.js static/CACHE/js/filename
+      ```
+      This step is because the JS on freedom fighters album detail template is not compressing to required output. We need to rectify the template.
 
 ## Modify Freedom Fighters Gallery's listing page description and detail page's carousel right sidebar
 Deployment Date: `2022-11-28` | Last updated: `2022-11-28`
