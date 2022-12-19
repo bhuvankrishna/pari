@@ -238,7 +238,7 @@
           var value = input.val().trim();
           input.removeClass("error");
           if(value.length > 0) {
-            window.location.href = window.location.origin + "/search/?q="+value+"&type=article&type=video&type=audio&language=en";
+            window.location.href = window.location.origin + "/search/?q="+value+"&type=article&type=video&type=audio&type=album&type=staticpage&language=en";
           } else {
             if(!input.hasClass("error")) {
                 input.addClass("error");
