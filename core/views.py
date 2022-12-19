@@ -76,6 +76,8 @@ def static_page(request, slug=None):
     active_tab = 'about-pari'
     if 'donate' in slug:
         active_tab = 'donate'
+    if 'freedom-fighters-gallery' in slug:
+        return redirect('/en/albums/freedom-fighters/')
     translations = get_translations_for_page(page.specific)
     translated_page = page
     translated_pages_slug = ['copyright', 'terms-and-conditions']

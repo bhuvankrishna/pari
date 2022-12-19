@@ -1,6 +1,28 @@
 # Deployment Steps
 Document steps for all the deployments
 
+## Show Freedom Fighters Gallery page in search results
+Deployment Date: `2022-12-19` | Last updated: `2022-12-19`
+
+* Deployment on production
+  * Merge the PR https://github.com/bhuvankrishna/pari/pull/9 and https://github.com/bhuvankrishna/pari/pull/10
+ 
+  * On the server, as ubuntu user, go to the project root and activate the python environment
+    ```sh
+    cd ~/pari && source ../pari_env/bin/activate
+    ```
+
+  * Ensure that you are on `release-candidate` branch and run
+   
+    ```sh
+    git pull bhuvan-pari release-candidate
+    ```
+
+  * Restart gnuicorn service as root and restart elasticsearch service as root
+    ```sh
+    supervisorctl restart pari:gunicorn_pari && service elasticsearch restart
+    ```
+
 ## Modify Freedom Fighters Gallery's listing page description and detail page's carousel right sidebar
 Deployment Date: `2022-11-28` | Last updated: `2022-11-28`
 
