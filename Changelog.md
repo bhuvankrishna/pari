@@ -9,6 +9,7 @@ All the work that goes into the project will be documented here.
 ### Modified
 * Changed the default query parameters that get used while searching from header search button
   * Added 'album' and 'staticpage' types
+  * Manually, need to modify a compressed file from static/CACHE/js for changing the params as there is a bug with freedom fighters album page JS (refer deployment steps for more information)
 
 ## 2022-11-28
 
