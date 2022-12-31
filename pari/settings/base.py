@@ -249,7 +249,7 @@ SOCIAL = {
     "TWITTER": "PARINetwork",
     "INSTAGRAM": "pari.network",
     "GITHUB_REPO": "PARINetwork/pari",
-    "GOOGLE_ANALYTICS_ID": "UA-49439949-1",
+    "GOOGLE_ANALYTICS_ID": "G-F5DMMZ978F",
     "YOUTUBE": "PARInetwork",
     "SOUND_CLOUD": "ruralindia"
 }
