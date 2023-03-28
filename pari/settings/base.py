@@ -249,7 +249,7 @@ SOCIAL = {
     "TWITTER": "PARINetwork",
     "INSTAGRAM": "pari.network",
     "GITHUB_REPO": "PARINetwork/pari",
-    "GOOGLE_ANALYTICS_ID": "UA-49439949-1",
+    "GOOGLE_ANALYTICS_ID": "G-F5DMMZ978F",
     "YOUTUBE": "PARInetwork",
     "SOUND_CLOUD": "ruralindia"
 }
@@ -273,6 +273,7 @@ LANGUAGES = (
     ("ta", _("Tamil")),
     ("ur", _("Urdu")),
     ("hne", _("Chhattisgarhi")),
+    ("bho", _("Bhojpuri")),
 
 )
 
@@ -288,6 +289,12 @@ EXTRA_LANG_INFO = {
         'code': 'hne',
         'name': 'Chhattisgarhi',
         'name_local': u'Chhattisgarhi',
+    },
+    'bho': {
+        'bidi': False,
+        'code': 'bho',
+        'name': 'Bhojpuri',
+        'name_local': u'Bhojpuri',
     },
     'gu': {
         'bidi': False,
