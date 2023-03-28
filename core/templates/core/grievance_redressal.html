@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n wagtailcore_tags %}
+
+{% block meta_title %}
+{% trans "Grievance Redressal PARI" %}
+{% endblock %}
+
+{% block meta_description %}{% trans "PARI Grievance Redressal" %}{% endblock %}
+
+{% block extra_css %}
+    <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}css/v2/pages/contact-us.less">
+    <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}css/v2/pages/static_page.less">
+{% endblock %}
+
+{% block main %}
+<div class="container" id="grievance-redressal">
+    <h1>{% trans "Grievance Redressal" %}</h1>
+    <p class="section-content">
+        {% trans "Any person residing in India can register a complaint related to the content of the website within a suitable period of time of the publication of the content." %}
+        <br />{% trans "The grievance can be addressed to our Grievance Officer-"%}<br/>{% trans "Name: ZAHRA LATIF, Community Manager, People's Archive of Rural India (PARI)" %}
+        <br />{% trans "Email: zahra@ruralindiaonline.org" %}
+        <br />{% trans "Telephone: +91 9821007241" %}<br />
+    </p>
+</div>
+{% endblock %}

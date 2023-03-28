@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^legal/(?P<slug>copyright)/$', views.static_page, name='static_page'),
 
     url(r'^contact-us/$', views.contact_us, name='contact_us'),
+    url(r'^grievance-redressal/$', views.grievance_redressal, name='grievance_redressal'),
     url(r'^(?P<slug>donate)/$', views.static_page, name='static_page'),
 
     url(r'^pages/guidelines/$', views.guidelines, name='guidelines'),

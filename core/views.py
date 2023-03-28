@@ -134,6 +134,11 @@ def donate(request):
 def about(request):
     return render(request, "core/about.html", {"tab": "about-pari", "current_page": 'about'})
 
+def grievance_redressal(request):
+    return render(request, "core/grievance_redressal.html", {
+        "tab": "about-pari",
+        "current_page": 'grievance_redressal',
+    })
 
 def founders(request, slug="about-the-editor"):
     about_the_editor = AboutTheEditorPage.objects.get(slug=slug)
@@ -191,7 +196,6 @@ def contact_us(request):
         "tab": "about-pari",
         "current_page": 'contact_us',
     })
-
 
 class ModelTranslatedPagePreviewMixin(object):
     def get(self, request, *args, **kwargs):
