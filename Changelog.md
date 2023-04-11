@@ -7,7 +7,7 @@ All the work that goes into the project will be documented here.
 * Added a sub menu item in menu item `Gallery`
  
 ### Modified
-* Change style dropdown menu of `Gallery` and `About PARI` for screen of size more than 1200px (width)
+* Changed style dropdown menu of `Gallery` and `About PARI` for desktop screen breakoint (min-width 1200px)
 * Modified classes of menu items for appropriate layout
 
 ## 2022-12-19
