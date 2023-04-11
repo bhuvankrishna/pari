@@ -1,5 +1,15 @@
 .alert-error {
-        color: #a94442;
-        background-color: #f2dede;
-        border-color: #ebccd1;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+@media (min-width: 1200px) {
+    .gallery .dropdown-menu {
+    min-width: 1300px;
+    right: -530px;
+    } 
+    .about-pari .dropdown-menu {
+    min-width: 1100px;
+    right: -230px;
     }
+}

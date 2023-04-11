@@ -1,6 +1,34 @@
 # Deployment Steps
 Document steps for all the deployments
 
+## Add Adivasi chindren Paintings to Gallery Menu
+Deployment Date: `2022-04-11` | Last updated: `2022-04-11`
+
+* Deployment on production
+  * Merge the PR https://github.com/bhuvankrishna/pari/pull/16
+ 
+ 
+  * On the server, as ubuntu user, go to the project root and activate the python environment
+    ```sh
+    cd ~/pari && source ../pari_env/bin/activate
+    ```
+
+  * Collect all static files to the root static folder (Choose `Yes` on prompt)
+    ```sh
+    python3 manage.py collectstatic
+    ```
+
+  * Ensure that you are on `release-candidate` branch and run
+   
+    ```sh
+    git pull bhuvan-pari release-candidate
+    ```
+
+  * Restart gnuicorn service as root and restart elasticsearch service as root
+    ```sh
+    systemctl restart gunicorn nginx elasticsearch
+    ```
+
 ## Show Freedom Fighters Gallery page in search results
 Deployment Date: `2022-12-19` | Last updated: `2022-12-19`
 

@@ -1,6 +1,15 @@
 # Changelog
 All the work that goes into the project will be documented here.
 
+## 2022-04-11
+
+### Added
+* Added a sub menu item in menu item `Gallery`
+ 
+### Modified
+* Changed style dropdown menu of `Gallery` and `About PARI` for desktop screen breakpoint (min-width 1200px)
+* Modified classes of menu items for appropriate layout
+
 ## 2022-12-19
 
 ### Added
