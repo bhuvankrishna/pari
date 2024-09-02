@@ -1898,7 +1898,7 @@ msgid ""
 "archive of black and white images from rural India is being digitised. One "
 "part of that titled &#39;Visible Work, Invisible Women&#39; is now on PARI "
 "as a fully curated online exhibition. For more on Sainath see <a href="
-"\"http://www.psainath.org/\" target=\"_blank\">www.psainath.org.</a>"
+"\"http://www.psainath.com/\" target=\"_blank\">www.psainath.com.</a>"
 msgstr ""
 
 #: core/templates/core/founders.html:24 core/templates/core/founders.html:50

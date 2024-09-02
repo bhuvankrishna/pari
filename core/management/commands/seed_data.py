@@ -24,7 +24,7 @@ class Command(BaseCommand):
         sainath_bio = "P. Sainath is the founder-editor of the People's Archive of Rural India. He has been a rural reporter for decades and is the author of 'Everybody Loves a Good Drought'"
         namita_bio = "Namita Waikar is a writer, translator and the managing editor of PARI. She is a partner in a chemistry databases firm, and has worked as a biochemist and a software project manager"
         sainath = AuthorFactory(name="P.Sainath", slug="sainath", email="psainath@gmail.com", facebook_username="",
-                                twitter_username="@PSainath_org", website="http://psainath.org/", bio=sainath_bio)
+                                twitter_username="@PSainath_org", website="http://psainath.com/", bio=sainath_bio)
         namita = AuthorFactory(name="Namita Waikar", slug="namita", email="namita.waikar@gmail.com",
                                facebook_username="namita.waikar",
                                twitter_username="@NamitaWaikar", website="http://www.namitawaikar.com/", bio=namita_bio)
