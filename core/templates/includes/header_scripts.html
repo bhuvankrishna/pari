@@ -1,11 +1,22 @@
 {% if GOOGLE_ANALYTICS_ID %}
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS_ID }}"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS_ID }}"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
   	  function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', '{{ GOOGLE_ANALYTICS_ID }}');
-        </script>
+        </script> -->
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VP2J0CQEKG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VP2J0CQEKG');
+  </script>
 {% endif %}
